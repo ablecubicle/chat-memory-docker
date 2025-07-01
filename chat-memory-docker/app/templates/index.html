@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Memory</title>
+</head>
+<body>
+    <h1>Chat Memory App</h1>
+    <form action="/submit" method="post">
+        <textarea name="prompt" rows="4" cols="50" placeholder="Your question here"></textarea><br/>
+        <button type="submit">Send</button>
+    </form>
+    <h2>History</h2>
+    <ul>
+    {% for msg in messages %}
+        <li><strong>{{ msg.timestamp }}:</strong> Q: {{ msg.prompt }} <br/> A: {{ msg.response }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

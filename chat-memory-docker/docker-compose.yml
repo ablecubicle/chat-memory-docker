@@ -1,0 +1,10 @@
+services:
+  chat-memory:
+    container_name: chat-memory
+    build: .
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
